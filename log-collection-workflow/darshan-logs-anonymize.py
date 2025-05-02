@@ -41,7 +41,7 @@ def anonymize_logs_in_parallel(log_files, out_dir, rand_seed, max_workers=32):
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print('Usage: python darshan-log-collect.py <input_log_dir> <output_log_dir> <rand_seed>')
+        print('Usage: python darshan-logs-anonymize.py <input_log_dir> <output_log_dir> <rand_seed>')
         sys.exit(1)
     log_dir = Path(sys.argv[1])
     out_dir = Path(sys.argv[2])
