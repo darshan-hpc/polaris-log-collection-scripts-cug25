@@ -22,7 +22,7 @@ It identifies 8 per rank files that each account for over 66 TiB of read data. C
 
 `darshan-parser ./1977553-17460120447186390966.darshan | grep /lus/grand/3073605787`
 
-In particular, `STDIO_BYTES_WRITTEN`, `STDIO_BYTES_READ`, `STDIO_MAX_BYTE_WRITTEN`, and `STDIO_MAX_BYTE_READ` help support the analysis from the case study in the paper.
+In particular, `STDIO_BYTES_WRITTEN`, `STDIO_BYTES_READ`, `STDIO_MAX_BYTE_WRITTEN`, and `STDIO_MAX_BYTE_READ` help support the analysis from the case study in the paper related to extensive re-reading of data.
 
 **analyze-intensive-user.py**
 
