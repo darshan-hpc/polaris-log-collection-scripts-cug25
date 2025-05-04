@@ -14,7 +14,7 @@ mpiio_df = pd.read_csv(f'{job_stats_dir}/mpiio-all.csv', usecols=['log_file', 't
 # get rid of erroneous logs with negative MPI-IO counters
 mpiio_df = mpiio_df[mpiio_df['total_bytes'] >= 0]
 
-# print overview statistics for each API
+# print overview statistics for each interface
 print(f'POSIX jobs sum: {len(posix_df)}')
 print(f'POSIX bytes sum: {posix_df["total_bytes"].sum()}')
 print(f'POSIX files sum: {posix_df["total_files"].sum()}')
