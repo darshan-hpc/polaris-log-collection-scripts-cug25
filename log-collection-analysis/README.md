@@ -35,3 +35,11 @@ This CSV data can be manually analyzed (e.g., by loading into a pandas DataFrame
 NOTE: individual Darshan logs are typically accounted for in multiple CSV files, as the corresponding jobs typically access data using multiple APIs and/or storage systems. Data is organized like this to better understand the extent of the usage of different APIs and storage systems, which is not clear from the aggregate statistics (i.e., the "all" category).
 
 NOTE: the `extract-job-stats.sh` script should be modified when used on systems besides Polaris to account for different file system mount points to analyze (e.g., `/home`, `/lus`, etc.).
+
+## Analyzing the logs
+
+The following subdirectories contain scripts used for generating data and plots used in the paper:
+
+- [jobs-overview](jobs-overview)
+- [jobs-cdfs](jobs-cdfs)
+- [fs-api-usage](fs-api-usage)
