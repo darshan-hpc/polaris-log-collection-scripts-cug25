@@ -1,6 +1,6 @@
 **extract-jobs-overview.py**
 
-This script calculates a statistical overview of all jobs for each interface. Statistics include total number of jobs, total bytes accessed, and total files accessed.
+This script calculates a statistical overview of all jobs for each interface. Statistics include total number of jobs, total bytes accessed, and total files accessed. It also summarizes how many log files did not perform I/O using any interface.
 
 `Usage: python extract-jobs-overview.py <job_stats_dir>`
 
