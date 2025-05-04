@@ -12,7 +12,7 @@ mpiio_df = pd.read_csv(f'{job_stats_dir}/mpiio-all.csv')
 # filter out jobs doing small amounts of I/O (less than 1 GiB)
 mpiio_df = mpiio_df[mpiio_df['total_bytes'] > (1024**3)]
 
-# re-sort data to be in ascending performance (default for job_stats is ascending total_bytes)
+# re-sort data to be in ascending performance (default for job_stats is descending total_bytes)
 mpiio_df = mpiio_df.sort_values(by='perf_by_slowest')
 
 # print out 10 lowest performing jobs to inspect manually
