@@ -42,4 +42,4 @@ The following subdirectories contain documentation scripts used for generating d
 
 - [jobs-overview](jobs-overview) - Overall job statistics for each interface (used for **Table 2**)
 - [jobs-cdfs](jobs-cdfs) - CDF plots of bytes accessed, files accessed, and observed performance for each interface (used for **Figure 4**)
-- [fs-api-usage](fs-api-usage) - Bar plots of storage system usage in terms of jobs and bytes for each interface (used for **Figure 5**)
+- [fs-interface-usage](fs-interface-usage) - Bar plots of storage system usage in terms of jobs and bytes for each interface (used for **Figure 5**)
