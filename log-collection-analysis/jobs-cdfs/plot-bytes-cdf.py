@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 if len(sys.argv) != 2:
-    print(f"Usage: {sys.argv[0]} <results_dir>")
+    print(f"Usage: {sys.argv[0]} <job_stats_dir>")
     sys.exit(1)
-results_dir = sys.argv[1]
+job_stats_dir = sys.argv[1]
 
 # load data
-posix_df = pd.read_csv(f'{results_dir}/posix-all.csv')
-stdio_df = pd.read_csv(f'{results_dir}/stdio-all.csv')
-mpiio_df = pd.read_csv(f'{results_dir}/mpiio-all.csv')
+posix_df = pd.read_csv(f'{job_stats_dir}/posix-all.csv')
+stdio_df = pd.read_csv(f'{job_stats_dir}/stdio-all.csv')
+mpiio_df = pd.read_csv(f'{job_stats_dir}/mpiio-all.csv')
 
 # filter and sort the data in ascending order
 posix_df = posix_df[posix_df['total_bytes'] > 0]
