@@ -32,6 +32,19 @@ for p, posix_val, stdio_val, mpiio_val in zip(percentiles, posix_percentiles, st
     print(f"  STDIO: {stdio_val:.2f} bytes")
     print(f"  MPIIO: {mpiio_val:.2f} bytes")
 
+def compute_top_1_percent_sum(sorted_bytes):
+    top_1_percent_idx = int(len(sorted_bytes) * 0.99)  # 99th percentile index
+    return np.sum(sorted_bytes[top_1_percent_idx:])
+
+# compute and print sums for top 1% of jobs for each dataset
+posix_top_1_sum = compute_top_1_percent_sum(sorted_posix_bytes)
+stdio_top_1_sum = compute_top_1_percent_sum(sorted_stdio_bytes)
+mpiio_top_1_sum = compute_top_1_percent_sum(sorted_mpiio_bytes)
+print(f"\nTotal bytes accessed by top 1% of jobs:")
+print(f"POSIX: {posix_top_1_sum} bytes (all_jobs = {sum(sorted_posix_bytes)})")
+print(f"STDIO: {stdio_top_1_sum} bytes (all jobs = {sum(sorted_stdio_bytes)})")
+print(f"MPI-IO: {mpiio_top_1_sum} bytes (all jobs = {sum(sorted_mpiio_bytes)})")
+
 # compute the CDF, the fraction of jobs at each data point
 posix_cdf = np.arange(1, len(sorted_posix_bytes) + 1) / len(sorted_posix_bytes)
 stdio_cdf = np.arange(1, len(sorted_stdio_bytes) + 1) / len(sorted_stdio_bytes)
