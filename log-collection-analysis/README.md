@@ -40,6 +40,6 @@ NOTE: the `extract-job-stats.sh` script should be modified when used on systems 
 
 The following subdirectories contain documentation scripts used for generating data and plots used in the paper:
 
-- [jobs-overview](jobs-overview) - Overall job statistics for each API (used for Table 2)
-- [jobs-cdfs](jobs-cdfs) - CDF plots of bytes accessed, files accessed, and observed performance for each API (used for Figure 4)
-- [fs-api-usage](fs-api-usage) - Bar plots of storage system usage in terms of jobs and bytes for each API (used for Figure 5)
+- [jobs-overview](jobs-overview) - Overall job statistics for each API (used for **Table 2**)
+- [jobs-cdfs](jobs-cdfs) - CDF plots of bytes accessed, files accessed, and observed performance for each API (used for **Figure 4**)
+- [fs-api-usage](fs-api-usage) - Bar plots of storage system usage in terms of jobs and bytes for each API (used for **Figure 5**)
