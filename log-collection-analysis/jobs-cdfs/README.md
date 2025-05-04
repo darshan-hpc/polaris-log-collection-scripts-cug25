@@ -1,6 +1,6 @@
 **plot-bytes-cdf.py**
 
-This script plots CDFs of total bytes accessed by all jobs for each interface. It also prints out 50th, 75th, 90th, and 99th percentiles of total bytes for each interface. It also calculates the total amount of bytes accessed by the top 1% of jobs using each interface.
+This script plots CDFs of total bytes accessed by all jobs for each interface. It also prints the 50th, 75th, 90th, and 99th percentiles of total bytes for each interface. It also prints the total amount of bytes accessed by the top 1% of jobs using each interface.
 
 `Usage: python plot-bytes-cdf.py <job_stats_dir>`
 
