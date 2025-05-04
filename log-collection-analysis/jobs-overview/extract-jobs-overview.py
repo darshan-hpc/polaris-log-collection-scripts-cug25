@@ -2,14 +2,14 @@ import sys
 import pandas as pd
 
 if len(sys.argv) != 2:
-    print(f"Usage: {sys.argv[0]} <results_dir>")
+    print(f"Usage: {sys.argv[0]} <job_stats_dir>")
     sys.exit(1)
-results_dir = sys.argv[1]
+job_stats_dir = sys.argv[1]
 
 # load and filter the data
-posix_df = pd.read_csv(f'{results_dir}/posix-all.csv', usecols=['log_file', 'total_bytes', 'total_files', 'partial_flag'])
-stdio_df = pd.read_csv(f'{results_dir}/stdio-all.csv', usecols=['log_file', 'total_bytes', 'total_files', 'partial_flag'])
-mpiio_df = pd.read_csv(f'{results_dir}/mpiio-all.csv', usecols=['log_file', 'total_bytes', 'total_files', 'partial_flag'])
+posix_df = pd.read_csv(f'{job_stats_dir}/posix-all.csv', usecols=['log_file', 'total_bytes', 'total_files', 'partial_flag'])
+stdio_df = pd.read_csv(f'{job_stats_dir}/stdio-all.csv', usecols=['log_file', 'total_bytes', 'total_files', 'partial_flag'])
+mpiio_df = pd.read_csv(f'{job_stats_dir}/mpiio-all.csv', usecols=['log_file', 'total_bytes', 'total_files', 'partial_flag'])
 
 # get rid of erroneous logs with negative MPI-IO counters
 mpiio_df = mpiio_df[mpiio_df['total_bytes'] >= 0]
