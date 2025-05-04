@@ -14,7 +14,7 @@ The log file is included here for convenience. A PyDarshan job summary report ca
 
 The analysis in the paper related to extensive re-reading of application data can be reproduced manually, using a combination of the PyDarshan `file_stats` tool and `darshan-parser`.
 
-The following command indicates the most read-intensive files accessed using STDIO: 
+The following PyDarshan command indicates the most read-intensive files accessed using STDIO: 
 
 `python -m darshan file_stats --module=STDIO 1977553-17460120447186390966.darshan`
 
