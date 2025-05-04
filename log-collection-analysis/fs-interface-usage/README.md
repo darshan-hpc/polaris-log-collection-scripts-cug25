@@ -1,6 +1,6 @@
 **extract-fs-interface-data.py**
 
-This script calculates aggregate job statistics to each storage system using each interface. The results are stored in a CSV file (fs_interface_usage.csv) that is fed to other plotting scripts.
+This script calculates aggregate job statistics for each storage system using each interface. The results are stored in a CSV file (fs_interface_usage.csv) that is fed to other plotting scripts.
 
 `Usage: python extract-fs-interface-data.py <job_stats_dir>`
 
