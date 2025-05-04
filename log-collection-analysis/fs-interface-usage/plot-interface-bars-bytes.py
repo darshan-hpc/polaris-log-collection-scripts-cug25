@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 if len(sys.argv) != 2:
-    print(f"Usage: {sys.argv[0]} <fs_api_usage_csv>")
+    print(f"Usage: {sys.argv[0]} <fs_interface_usage_csv>")
     sys.exit(1)
 
 df = pd.read_csv(sys.argv[1])
 
-# reorganize input data with storage systems as rows and APIs as columns
-df_pivot = df.pivot(index="Storage", columns="API", values="total_bytes")
+# reorganize input data with storage systems as rows and interfaces as columns
+df_pivot = df.pivot(index="Storage", columns="Interface", values="total_bytes")
 df_pivot = df_pivot[["POSIX", "STDIO", "MPI-IO"]].reindex(["lustre", "home", "local scratch"])
 fses = df_pivot.index
-apis = df_pivot.columns
+interfaces = df_pivot.columns
 
 # define x-tick values and labels
 xtick_values = [2**30, 2**40, 2**50]
@@ -31,14 +31,14 @@ def format_annotation(value):
     formatted_value = value / closest_tick  # Convert to unit
     return f"{formatted_value:.1f} {unit_label.split()[1]}"
 
-# plot APIs for each set of storage systems as horizontal bars
+# plot interfaces for each set of storage systems as horizontal bars
 plt.figure(figsize=(8, 6))
 ax = plt.gca()
 bar_height = 0.2
 y = np.arange(len(fses))
-for i, api in enumerate(apis):
+for i, interface in enumerate(interfaces):
     offset = (i - 1) * bar_height
-    bars = ax.barh(y + offset, df_pivot[api], height=bar_height, label=api, edgecolor='black')
+    bars = ax.barh(y + offset, df_pivot[interface], height=bar_height, label=interface, edgecolor='black')
 
     # annotate each bar in terms of the closest lower xtick
     for bar in bars:
