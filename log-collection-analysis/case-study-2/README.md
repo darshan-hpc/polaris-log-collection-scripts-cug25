@@ -12,6 +12,18 @@ The log file is included here for convenience. A PyDarshan job summary report ca
 
 `python -m darshan summary 1977553-17460120447186390966.darshan`
 
+The analysis in the paper related to extensive re-reading of application data can be reproduced manually, using a combination of the PyDarshan `file_stats` tool and `darshan-parser`.
+
+The following command indicates the most read-intensive files accessed using STDIO: 
+
+`python -m darshan file_stats --module=STDIO 1977553-17460120447186390966.darshan`
+
+It identifies 8 per rank files that each account for over 66 TiB of read data. Choosing one of the files (e.g., /lus/grand/3073605787) and analyzing it with `darshan-parser` gives detailed counters captured by Darshan:
+
+`darshan-parser ./1977553-17460120447186390966.darshan | grep /lus/grand/3073605787`
+
+In particular, `STDIO_BYTES_WRITTEN`, `STDIO_BYTES_READ`, `STDIO_MAX_BYTE_WRITTEN`, and `STDIO_MAX_BYTE_READ` help support the analysis from the case study in the paper.
+
 **analyze-intensive-user.py**
 
 This script summarizes aggregate STDIO statistics, as well as contributions by this particular intensive user. This data is used in Table 3.
