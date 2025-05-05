@@ -40,6 +40,7 @@ NOTE: the `extract-job-stats.sh` script should be modified when used on systems 
 
 The following subdirectories contain documentation scripts used for generating data and plots used in the paper:
 
+- [jobs-coverage](jobs-coverage) Overall and per-project coverage plots (**Figure 2** and **Figure 3**)
 - [jobs-overview](jobs-overview) - Overall job statistics for each interface (used for **Table 2**)
 - [jobs-cdfs](jobs-cdfs) - CDF plots of bytes accessed, files accessed, and observed performance for each interface (used for **Figure 4**)
 - [fs-interface-usage](fs-interface-usage) - Bar plots of storage system usage in terms of jobs and bytes for each interface (used for **Figure 5**)
