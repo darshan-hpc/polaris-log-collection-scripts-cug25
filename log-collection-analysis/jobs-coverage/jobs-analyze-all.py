@@ -18,13 +18,11 @@ with open(darshan_jobids_file, 'r') as file:
 df_2024 = pd.read_csv(jobs_2024_csv)
 df_2024['END_MONTH'] = df_2024['END_TIMESTAMP'].apply(lambda x: int(x.split()[0].split('-')[1].lstrip('0')))
 df_2024 = df_2024[df_2024['END_MONTH'] >= 5]
-df_2024.drop(columns=['END_MONTH'], axis=1, inplace=True)
 
 # read all 2025 data, and chop off unwanted months (anything after Feb)
 df_2025 = pd.read_csv(jobs_2025_csv)
 df_2025['END_MONTH'] = df_2025['END_TIMESTAMP'].apply(lambda x: int(x.split()[0].split('-')[1].lstrip('0')))
 df_2025 = df_2025[df_2025['END_MONTH'] <= 2]
-df_2025.drop(columns=['END_MONTH'], axis=1, inplace=True)
 
 # calculate node hours (and other helper vars)
 df = pd.concat([df_2024, df_2025])
