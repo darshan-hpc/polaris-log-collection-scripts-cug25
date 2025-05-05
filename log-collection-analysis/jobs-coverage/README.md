@@ -38,7 +38,7 @@ The first step is to create the montly CSV files describing all jobs and Darshan
 
 `jobs_csv` is the ALCF job scheduler dataset to be analyzed, `month` is the integer month to be analyzed, and `darshan_job_ids_file` is the file with the list of all Darshan covered job IDs.
 
-This script will generate 2 CSV files that can be passed to the `*plot-project-node-hours.py` script.
+This script will generate 2 CSV files that can be passed to the `plot-project-node-hours.py` script.
 
 **plot-project-node-hours.py**
 
